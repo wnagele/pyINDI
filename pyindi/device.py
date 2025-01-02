@@ -992,7 +992,7 @@ class device(ABC):
 
                     self._once = False
 
-            elif xml.attrib['name'] in self._NewPropertyMethods:
+            elif 'name' in xml.attrib and xml.attrib['name'] in self._NewPropertyMethods:
                 names = [ele.attrib["name"] for ele in xml]
                 if "Number" in xml.tag:
                     values = [float(ele.text.strip()) for ele in xml]
